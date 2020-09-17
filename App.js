@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Image } from 'react-native';
+import MyButton from './components/MyButton.js'
 
 export default function App() {
   const [input, setInput] = useState('')
@@ -16,10 +17,10 @@ export default function App() {
       />
       <Text style={{ color: textColor, fontSize: 18 }}>{input}</Text>
       <View style={styles.buttonLayout} >
-        <Button title="Red" color="red" onPress={() => setTextColor('red')} />
-        <Button title="Blue" color="blue" onPress={() => setTextColor('blue')} />
-        <Button title="Green" color="green" onPress={() => setTextColor('green')} />
-      </View>
+        <MyButton title="Red" color="red" onChangeColor={(color) => { setTextColor(color) }} />
+        <MyButton title="Blue" color="blue" onChangeColor={(color) => { setTextColor(color) }} />
+        <MyButton title="Green" color="green" onChangeColor={(color) => { setTextColor(color) }} />
+      </View >
     </View>
   );
 }
